@@ -14,24 +14,24 @@ namespace WorkB
             string first = Console.ReadLine();
             Console.WriteLine("Enter the second word");
             string second = Console.ReadLine();
-            bool isOk = true;
+            bool isOk = true ;
             // loop through first
             for (int i = 0; i < first.Length; i++)
             {
                 //string letterFromFirst = first[i].ToString();
                 string letterFromFirst = first.Substring(i, 1);
                 //loop through second
-                isOk = false;
+                isOk = false ;
                 for (int j = 0; j < second.Length; j++)
                 {
                     if (letterFromFirst == second[j].ToString())
                     {
-                        second = second.Remove(j, 1);
+                        second = second.Remove(j,1);
                         isOk = true;
                         break;
                     }
                 }
-                if (!isOk)
+                if (!isOk )
                 {
                     break;
                 }
@@ -41,7 +41,7 @@ namespace WorkB
                 Console.WriteLine("Good");
             }
             else
-            {
+            { 
                 Console.WriteLine("bad");
             }
             Console.ReadLine();
