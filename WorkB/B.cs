@@ -10,20 +10,39 @@ namespace WorkB
     {
         static void Main(string[] args)
         {
-            int[] frequency = new int[10];
-            Console.WriteLine("How many digits");
-            int numberOfDigits = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < numberOfDigits; i++)
+            Console.WriteLine("what number in the Harshard numbers do you want");
+            int harshPos = 0;
+            int count = 0;
+            int currentNumber = 0;
+            do
             {
-                int digit = Convert.ToInt32(Console.ReadLine());
-                frequency[digit]++;
-            }
-            int highest = frequency[0];
-            int posHighest = 0;
-
-
-
+                currentNumber++;
+                if (Harshard(currentNumber))
+                {
+                    count++;
+                }
+            } while (count < harshPos);
             Console.ReadLine();
+        }
+
+        private static bool Harshard(int currentNumber)
+        {
+            bool isHarsh = false;
+            string digString = currentNumber.ToString();
+            int total = 0;
+            foreach (var item in digString)
+            {
+                total += Convert.ToInt32(item.ToString());
+            }
+            if (currentNumber % total == 0)
+            {
+                isHarsh = true;
+            }
+            else
+            {
+                isHarsh = false;
+            }
+            return isHarsh;
         }
     }
 }

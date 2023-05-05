@@ -10,40 +10,41 @@ namespace WorkA
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the first word");
-            string first = Console.ReadLine();
-            Console.WriteLine("Enter the second word");
-            string second = Console.ReadLine(); 
-            bool isOk = false;
-            // loop through first
-            for (int i = 0; i < first.Length; i++)
+            Console.WriteLine("what position in the Harshard do you want");
+            int harshPos = Convert.ToInt32(Console.ReadLine());
+            int count = 0;
+            int currentNumber = 0;
+            do
             {
-                string letterFromFirst = first.Substring(i, 1);
-                isOk = false;
-                for (int j = 0; j < second.Length; j++)
+                currentNumber++;
+                if (Harshard(currentNumber))
                 {
-                    if (letterFromFirst == second.Substring(j,1))
-                    {
-                        second = second.Remove(j, 1);
-                        isOk = true;
-                        break;
-                    }
+                    count++;
                 }
-                if (!isOk)
-                {
-                    break;
-                }
+            } while (count < harshPos);
+            Console.WriteLine(currentNumber);
+            Console.ReadLine();
+        }
+
+        private static bool Harshard(int currentNumber)
+        {
+            bool isHarsh = false;
+            int total = 0;
+            string digitString = currentNumber.ToString();
+            foreach (var item in digitString)
+            {
+                total += Convert.ToInt32(item.ToString());
             }
-            if (isOk)
+            if (currentNumber % total == 0)
             {
-                Console.WriteLine("good");
+                isHarsh = true; 
             }
             else
             {
-                Console.WriteLine("bad");
+                isHarsh = false;
             }
 
-            Console.ReadLine();
+            return isHarsh;
         }
     }
 }
