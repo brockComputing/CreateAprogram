@@ -10,40 +10,19 @@ namespace WorkB
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the first word");
-            string first = Console.ReadLine();
-            Console.WriteLine("Enter the second word");
-            string second = Console.ReadLine();
-            bool isOk = true ;
-            // loop through first
-            for (int i = 0; i < first.Length; i++)
+            int[] frequency = new int[10];
+            Console.WriteLine("How many digits");
+            int numberOfDigits = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < numberOfDigits; i++)
             {
-                //string letterFromFirst = first[i].ToString();
-                string letterFromFirst = first.Substring(i, 1);
-                //loop through second
-                isOk = false ;
-                for (int j = 0; j < second.Length; j++)
-                {
-                    if (letterFromFirst == second[j].ToString())
-                    {
-                        second = second.Remove(j,1);
-                        isOk = true;
-                        break;
-                    }
-                }
-                if (!isOk )
-                {
-                    break;
-                }
+                int digit = Convert.ToInt32(Console.ReadLine());
+                frequency[digit]++;
             }
-            if (isOk)
-            {
-                Console.WriteLine("Good");
-            }
-            else
-            { 
-                Console.WriteLine("bad");
-            }
+            int highest = frequency[0];
+            int posHighest = 0;
+
+
+
             Console.ReadLine();
         }
     }
