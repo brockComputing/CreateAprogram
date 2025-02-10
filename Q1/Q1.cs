@@ -17,19 +17,19 @@ namespace Q1
             string originalText = Console.ReadLine();
             int pos = 0;
             currentLetter = originalText[0].ToString();
-            while (pos < originalText.Length -1)
+            while (pos < originalText.Length - 1)
             {
-                if (currentLetter != originalText[pos +1].ToString())
-                {
-                    compressedText = compressedText + currentLetter + countOfLetter;
-                    currentLetter = originalText[pos + 1].ToString();
-                    countOfLetter = 1;
-                    pos ++;
-                }
-                else
+                if (currentLetter == originalText[pos + 1].ToString())
                 {
                     pos++;
                     countOfLetter++;
+                }
+                else
+                {
+                    compressedText = compressedText + currentLetter + countOfLetter;
+                    currentLetter = originalText[pos + 1].ToString();
+                    pos++;
+                    countOfLetter = 1;
                 }
             }
             compressedText = compressedText + currentLetter + countOfLetter;
