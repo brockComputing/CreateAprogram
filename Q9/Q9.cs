@@ -17,7 +17,7 @@ namespace Q9
                 Console.WriteLine("enter a number");
                 num = Convert.ToInt32(Console.ReadLine());
 
-            } while (num < 0);
+            } while (num <= 0);
             string strNum = num.ToString();
             int countOfIncreasing = 0;
             int countOfDecreasing = 0;
