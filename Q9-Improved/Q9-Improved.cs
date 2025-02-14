@@ -21,7 +21,7 @@ namespace Q9
             string strNum = num.ToString();
             int countOfIncreasing = 0;
             int countOfDecreasing = 0;
-          
+
             for (int i = 0; i < strNum.Length - 1; i++)
             {
                 if (strNum[i] < strNum[i + 1])
@@ -33,23 +33,18 @@ namespace Q9
                     countOfDecreasing++;
                 }
             }
-            if (countOfDecreasing != 0 && countOfIncreasing == 0)
+            if (countOfDecreasing == countOfIncreasing && countOfDecreasing != 0)
             {
-                Console.WriteLine("Not bouncy");
+                Console.WriteLine("perfectly bouncy");
             }
-            else if (countOfIncreasing != 0 && countOfDecreasing == 0)
-            {
-                Console.WriteLine("not a bouncy number");
-            }
-            else if (countOfIncreasing !=0 && countOfDecreasing != 0 && countOfIncreasing != countOfDecreasing)
+            else if (countOfDecreasing != 0 && countOfIncreasing != 0)
             {
                 Console.WriteLine("bouncy");
             }
             else
             {
-                Console.WriteLine("perfectly bouncy");
+                Console.WriteLine("Not a bouncy number");
             }
-           
             Console.ReadLine();
         }
     }
