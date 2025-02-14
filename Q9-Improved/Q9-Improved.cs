@@ -50,21 +50,6 @@ namespace Q9
                 Console.WriteLine("perfectly bouncy");
             }
            
-            //if (!increasing && !decreasing)
-            //{
-            //    if (countOfIncreasing == countOfDecreasing)
-            //    {
-            //        Console.WriteLine("perfectly bouncy");
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("bouncy");
-            //    }
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Not bouncy");
-            //}
             Console.ReadLine();
         }
     }
