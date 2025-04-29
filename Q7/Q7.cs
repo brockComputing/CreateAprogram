@@ -44,7 +44,8 @@ namespace Q7
             Console.WriteLine(enteredText);
             Console.ReadLine();
         }
-
+        // possibly a better method is to record index of vowels in a list and the actual vowels found
+        // in another list reverse one of the lists and then swap
        
     }
 }
