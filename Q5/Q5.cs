@@ -47,7 +47,7 @@ namespace Q5
             }
             else
             {
-                Console.WriteLine($"{posHighest} is the most frequent");
+                Console.WriteLine($"{posHighest} is the most frequent with a value of {frequency[posHighest]}");
             }
             Console.ReadLine();
         }
