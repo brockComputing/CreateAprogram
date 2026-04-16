@@ -12,7 +12,6 @@ namespace Q10
         {
             Console.WriteLine("enter number of columns");
             int columns = Convert.ToInt32(Console.ReadLine());
-            int rowsUsed = 0;
             string plainText = "";
             Console.WriteLine("enter the plain text");
             plainText = Console.ReadLine();
