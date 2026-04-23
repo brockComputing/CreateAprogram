@@ -11,17 +11,24 @@ namespace Q8
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("enter the string");
-            string theWord = Console.ReadLine();
-            // check for length
-            if (CheckLen(theWord) && CheckCase(theWord) && CheckUnique(theWord)
-                && CheckAscii(theWord))
+            bool isOk = false;
+            while (!isOk)
             {
-                Console.WriteLine("valid");
-            }
-            else
-            {
-                Console.WriteLine("inValid");
+                isOk = true;
+                Console.WriteLine("enter the string");
+                string theWord = Console.ReadLine();
+                // check for length
+                if (CheckLen(theWord) && CheckCase(theWord) && CheckUnique(theWord)
+                    && CheckAscii(theWord))
+                {
+                    Console.WriteLine("valid");
+                }
+                else
+                {
+                    isOk = false;
+                    Console.WriteLine("inValid");
+                }
+
             }
             Console.ReadLine();
         }
@@ -72,7 +79,7 @@ namespace Q8
 
         private static bool CheckLen(string theWord)
         {
-            if (theWord.Length >= 5 && theWord.Length <=7)
+            if (theWord.Length >= 5 && theWord.Length <= 7)
             {
                 return true;
             }
